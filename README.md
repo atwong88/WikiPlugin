@@ -1,10 +1,34 @@
 # WikiPlugin
-A statistical heat-map plugin for Wikipedia pages
+The WikiPlugin: A new lens for viewing the world’s knowledge.
+
+# Project Report
+[final_report.pdf](https://github.com/atwong88/WikiPlugin/files/5462867/final_report.pdf)
+
+# WikiPlugin Chrome Extension
+![image](https://user-images.githubusercontent.com/29899423/97657433-34bd9180-1a40-11eb-8c10-441c631eafc2.png)
+
 
 # WikiPlugin Analysis Webpage
-Website: http://172.105.25.92/ 
+Front Page
+![image](https://user-images.githubusercontent.com/29899423/97657068-5407ef00-1a3f-11eb-9052-af17a9d609dc.png)
 
-# Initially used datasets
+User Input Page
+![image](https://user-images.githubusercontent.com/29899423/97657258-ce387380-1a3f-11eb-9dc1-24844e052d66.png)
+
+Graphical Similarity Page
+![image](https://user-images.githubusercontent.com/29899423/97657292-e3150700-1a3f-11eb-96e5-c3ccb9c271c3.png)
+
+Semantic Similarity Page
+![image](https://user-images.githubusercontent.com/29899423/97657310-f031f600-1a3f-11eb-8371-ae1174cc52e7.png)
+
+Wikipedia Topics Statistics Page
+![image](https://user-images.githubusercontent.com/29899423/97657322-fb852180-1a3f-11eb-8ff9-6b54415f16e2.png)
+
+Simple Wikipedia Suggestions Page
+![image](https://user-images.githubusercontent.com/29899423/97657377-15beff80-1a40-11eb-9a31-1b160feac713.png)
+
+
+# Raw datasets sources
 <b>clickstream:</b> enwiki (second file) from https://dumps.wikimedia.org/other/clickstream/2020-01/ <br>
 <b>article text:</b> multistream1 and index1 from https://dumps.wikimedia.org/enwiki/20200101/ <br>
 
@@ -21,27 +45,12 @@ Website: http://172.105.25.92/
 7. Upload the above file to the extension popup.
 
 # How to run the flask app
-1. Run "pip install flask", "pip install flask-wtf", and "pip install sqlalchemy" (for the future usage)
+1. Run "pip install flask", "pip install flask-wtf", and "pip install sqlalchemy"
 2. Make sure you have run.py and web_application folder in the main directory
-2. Go to the main directory and run "python run.py"
-
-# How to download the datasets manually (the server takes care of this now) 
-1. Run 
-- $python check_wikipedia_dataset.py
-2. Run
-- 'Data Type' and 'YYYYMM' are manatory, but you can skip inputing a thread count.
-- $./run_download_wikipedia.sh [Data Type] [YYYYMM] [Thread Count]
-- $./run_download_wikipedia.sh text 202001 10
-- $./run_download_wikipedia.sh clickstream 202001 1
+3. Go to the main directory and run "python run.py"
 
 # Data Pipeline
 1. Please read 'DataPipeline.md'
 
 <hr>
-
-# Manual Coding Sheet
-https://docs.google.com/spreadsheets/d/19a6dcgVih2JuC54kkl2GmVK4rJMlFVQbqYUnbjCIZDE/edit?usp=sharing
-	
-# Sqlite Database
-https://drive.google.com/file/d/1-oMlCy3txpK9NWvlQc_3Gp0WNImhlbGw/view?usp=sharing
 	    	
