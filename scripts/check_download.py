@@ -1,3 +1,10 @@
+############################################################################
+# Name : check_download.py
+# Purpose : check that the raw data sources to see what can be downloaded
+# Input : None
+# Return : 0
+############################################################################ 
+
 import requests
 import shutil
 import gzip

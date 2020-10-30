@@ -1,3 +1,10 @@
+############################################################################
+# Name : difficulty_score_model.py
+# Purpose : reads initial preprocessed data, prepares data further for training, trains Logistic Regression model
+# Input : None
+# Return : 0
+############################################################################ 
+
 import pandas as pd
 import numpy as np
 import sys,re, pickle, nltk

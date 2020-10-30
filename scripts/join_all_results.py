@@ -1,3 +1,10 @@
+############################################################################
+# Name : join_all_results.py
+# Purpose : join all necessary tables to be used for model training
+# Input : None
+# Return : 0
+############################################################################ 
+
 import pandas as pd
 
 df_textstat = pd.read_csv('../Outputs/textstat/textstat_text_enwiki-20200101-pages-articles-multistream1.xml-p10p30302.csv')

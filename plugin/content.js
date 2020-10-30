@@ -1,5 +1,4 @@
 var curr_url = window.location.href;
-// chrome.runtime.onMessage.addListener(recolour);
 s_arr = []
 var set_checked = false;
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -76,4 +75,3 @@ function recolour(message) {
 		}
 	}
 };
-// path: C:\Users\User\AppData\Local\Google\Chrome\User Data

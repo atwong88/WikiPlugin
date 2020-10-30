@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+############################################################################
+# Name : topic_modelling.py
+# Purpose : performs topic modelling on articles
+# Input : preprocessed dataset
+# Return : 0
+############################################################################ 
+
 import sys
 import pandas as pd
 import xmltodict, nltk
@@ -27,7 +34,6 @@ def tokenize_text(s):
         result = re.sub('[\W_]+', '', j)
         result_list.append(result)
         result_list = [x for x in result_list if x]
-        #result = ' '.join(result_list)
     return result_list
 
 
@@ -84,20 +90,6 @@ if __name__ == '__main__':
     df_text = pd.read_csv(filepath)
     df_text['text_tokens'] = df_text['text'].apply(tokenize_text)
     df_text['text_clean'] = df_text['text_tokens'].apply(lambda x: ' '.join(x))
-
-#     #Building LDA Model
-#     print('Building LDA model')
-#     lda, dictionary, corpus = model_all()
-    
-#     print('Saving Model')
-#     file = open('lda.pkl', 'wb')
-#     pickle.dump(lda, file)
-#     file.close()
-
-#     print('Saving Dictionary')
-#     file = open('dictionary.pkl', 'wb')
-#     pickle.dump(dictionary, file)
-#     file.close()
 
     # Reading dictionary and model files:
     print("Loading lda model")

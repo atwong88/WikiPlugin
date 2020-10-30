@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+############################################################################
+# Name : clickstream_to_csv.py
+# Purpose : preprocess clickstream datasets and write to CSV for future use
+# Input : folder to clickstream dataset and clickstream dataset name
+# Return : 0
+############################################################################    
+
 import sqlalchemy
 import pandas as pd
 import re
@@ -42,7 +49,6 @@ df_combined['resource'] = df_combined['resource'].apply(preprocess)
 df_result = df_combined[df_combined['resource'].map(len) > 0]
 
 # get date from file name
-#date = file[-11:-4].replace('-', '')
 start = file.find('-',12)
 end = file.find('.')
 date = file[start+1:end]
@@ -55,22 +61,3 @@ df_result = df_result.reset_index(drop=True)
 
 # Writing to CSV
 df_result.to_csv('../Outputs/clickstream/clickstream-'+date+'.csv')
-
-
-# You would uncomment this if you wanted to additionally write to our database (if you had the key file). 
-
-#with open('../database.key', 'r') as file:
-#    DB_URIfix = file.read()
-
-#engine = sqlalchemy.create_engine(DB_URIfix)
-#datatypes = {
-#    'Snapshot': sqlalchemy.types.INTEGER(),
-#    'From': sqlalchemy.types.NVARCHAR(8000),
-#    'To': sqlalchemy.types.NVARCHAR(8000),
-#    'RelationType': sqlalchemy.types.NVARCHAR(50),
-#    'Count': sqlalchemy.types.INTEGER()
-#}
-
-#print('writing to database')
-#df.loc[start:end].to_sql('Clickstream',engine, index=False,dtype=datatypes,if_exists='append')
-#pritn('done writing to database')

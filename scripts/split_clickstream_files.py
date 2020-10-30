@@ -1,3 +1,10 @@
+############################################################################
+# Name : split_clickstream_files.py
+# Purpose : splits very large clickstream datasets
+# Input : date for file
+# Return : 0
+############################################################################ 
+
 import os
 import io
 import sys

@@ -1,3 +1,10 @@
+############################################################################
+# Name : graphical_metrics.py
+# Purpose : calculate graphical metrics on the link of wikipedia articles
+# Input : None
+# Return : 0
+############################################################################ 
+
 import networkx as nx
 from networkx.algorithms import community 
 import pandas as pd

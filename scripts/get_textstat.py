@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ETL script for textstat metrics on the text of each wikipedia article: 
-# (textstat is a python package that calculates various metrics on sentence
-# complexity, such as the Dale–Chall formula, or the Flesch Reading Ease score) 
+############################################################################
+# Name : get_textstat.py
+# Purpose : calculate textstat metrics on the text of each wikipedia article
+# Input : path to file to be calculated on
+# Return : 0
+############################################################################ 
 
 import os
 import sys, re

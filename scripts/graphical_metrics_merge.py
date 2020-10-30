@@ -1,3 +1,10 @@
+############################################################################
+# Name : graphical_metrics_merge.py
+# Purpose : merge all graphical metrics CSVs
+# Input : None
+# Return : 0
+############################################################################ 
+
 import os, glob
 import pandas as pd
 

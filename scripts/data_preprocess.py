@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+############################################################################
+# Name : data_preprocess.py
+# Purpose : preprocess text data from Wikipedia articles and write result to CSV
+# Input : path to file
+# Return : 0
+############################################################################ 
+
 import os
 import sys
 import bz2
@@ -14,8 +21,6 @@ from nltk import download, tokenize, word_tokenize
 from nltk.corpus import stopwords
 from gensim.models import Word2Vec
 
-# nltk.download('stopwords')
-# nltk.download('punkt')
 stop_words = stopwords.words('english')
 
 def preprocess_sentence(doc):
@@ -63,10 +68,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("[Error] Invalid inputs")
         sys.exit(1)       
-        
-#     date = re.search(r'(enwiki\-)(.*?)(-pages)', filepath).group(2)
-#     date = '20200101'
-#     filepath = '../Datasets/enwiki-'+date+'-pages-articles-multistream1.xml-p10p30302'
         
     filepath = sys.argv[1]
     date = filepath.split("-")[1]

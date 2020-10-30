@@ -1,3 +1,10 @@
+############################################################################
+# Name : graphical_metrics_parallel.py
+# Purpose : calculate graphical metrics on the text of each wikipedia article to be run in parallel
+# Input : None
+# Return : 0
+############################################################################ 
+
 import os
 import sys
 import networkx as nx
@@ -11,14 +18,8 @@ G = nx.Graph()
 def get_degree(article):
     return G.nodes[article]['degree']
 
-#def get_eigenvector(article):
-#    return G.nodes[article]['eigenvector']
-
 def get_beweenness(article):
     return G.nodes[article]['betweenness']
-
-#def get_community(article):
-#    return G.nodes[article]['modularity']
 
 # Checking a directory
 def check_path(inputPath):
@@ -32,10 +33,7 @@ def check_path(inputPath):
         
         
 def main(pathfile):        
-    # pathfile = '../clickstream-enwiki-2020-01.tsv'
-
     print('Reading CSV')
-#     df = pd.read_csv(pathfile,sep='\t',nrows=20000,header=None)
     df = pd.read_csv(pathfile, sep='\t', nrows=20000, header=None)
     df.columns = ['From','To','RelationType','Count']
     df = df[df['RelationType']=='link']
@@ -49,7 +47,6 @@ def main(pathfile):
     for r in df.values:
         edge = (r[0],r[1])
         edges.append(edge)
-#     G = nx.Graph()
     G.add_nodes_from(nodes)
     G.add_edges_from(edges)
     print('Calculating graphical metrics')
@@ -61,24 +58,12 @@ def main(pathfile):
 
     # Betweenness and Eigenvector Centrality
     betweenness_dict = nx.betweenness_centrality(G) # Run betweenness centrality#
-    #eigenvector_dict = nx.eigenvector_centrality(G) # Run eigenvector centrality
     nx.set_node_attributes(G, betweenness_dict, 'betweenness')
-    #nx.set_node_attributes(G, eigenvector_dict, 'eigenvector')
-
-    # Greedy Modularity Community Assignment
-    #communities = community.greedy_modularity_communities(G)
-    #modularity_dict = {} 
-    #for i,c in enumerate(communities): 
-    #    for name in c: 
-    #        modularity_dict[name] = i 
-    #nx.set_node_attributes(G, modularity_dict, 'modularity')
 
     # Building the pandas dataframe
     articles_df = pd.DataFrame(np.unique(nodes),columns=['Article'])
     articles_df['Degree'] = articles_df['Article'].apply(get_degree)
-    #articles_df['EigenvectorCentrality'] = articles_df['Article'].apply(get_eigenvector)
     articles_df['BetweennessCentrality'] = articles_df['Article'].apply(get_beweenness)
-    #articles_df['CommunityID'] = articles_df['Article'].apply(get_community)
 
     # Write CSV
     outputPath = "../Outputs/clickstream/"

@@ -1,3 +1,10 @@
+############################################################################
+# Name : download_wikipedia.py
+# Purpose : downloads raw datasets
+# Input : dataset name
+# Return : 0
+############################################################################ 
+
 import requests
 import shutil
 import gzip
@@ -98,21 +105,6 @@ def pageview(date, filepath):
     download_file(filename, path)
 
     return 0
-    
-#     print('Now decompressing the file...')
-
-#     comp_file = bz2.BZ2File(local_file, 'rb')
-#     read_file = comp_file.read()
-#     comp_file.close()
-
-#     new_file_name = '-'.join(local_file.split('-')[:-1])
-#     f =  open(new_file_name, 'wb')
-#     f.write(read_file)
-#     f.close()
-
-#     shutil.move(new_file_name, 'Datasets/'+new_file_name)
-#     os.unlink(local_file)
-#     print('Finished decompressing the file.')
 
     
 if __name__ == '__main__':

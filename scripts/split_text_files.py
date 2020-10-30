@@ -1,3 +1,10 @@
+############################################################################
+# Name : split_text_files.py
+# Purpose : split large text files
+# Input : path to file
+# Return : 0
+############################################################################ 
+
 import os
 import io
 import sys

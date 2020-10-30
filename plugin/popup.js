@@ -1,13 +1,3 @@
-// chrome.tabs.getSelected(null, function(tab) {
-//   // Send a request to the content script.
-//   chrome.tabs.sendMessage(tab.id, {message: "getInfo"}, function(response) {
-//     document.getElementById('articleName').innerHTML = "Wikipedia Article: " + response.title;
-//   });
-//   // chrome.tabs.sendMessage(tab.id, {message: "getMinutes"}, function(response) {
-//   //   document.getElementById('readingTime').innerHTML = "Estimated Reading Time: " + response.minutes + " minutes";
-//   // });
-// });
-
 let toggle = document.getElementById('switch');
 
 function getValue(callback) {
@@ -28,5 +18,3 @@ toggle.addEventListener('change', (event) => {
 		chrome.tabs.sendMessage(tabs[0].id, {message: message_bool}); // sends message to content.js to change link colours
 	});
 });
-
-//todo: save file to storage

@@ -1,3 +1,10 @@
+############################################################################
+# Name : difficulty_score_prediction.py
+# Purpose : loads model and predicts difficulty score of dataset
+# Input : path to summary file, path to labelled score file, path to model file
+# Return : 0
+############################################################################ 
+
 import difficulty_score_model as dsm
 import sys
 import pandas as pd
