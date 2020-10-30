@@ -15,12 +15,11 @@ Since we use docker-compose, it is easy to build, stop, and run docker images.
         --> /var/apps/scripts
 
 # How to use Jenkins
-After starting docker images, you can use Jenkins by accesing http://localhost
-However, jobs are not registred, so you should register tasks accroding to the below order and conditions.
+After starting docker images, you can use Jenkins by accessing http://localhost However, jobs are not registered, so you should register tasks according to the below order and conditions.
 
 
 # Description
-1. check_wikipedia_dataset.py
+1. check_download.py
     - Create lists to download (Text, Clickstream and pageview)
 2. run_download_wikipedia.sh
     - Run 'download_wikipedia.py'
@@ -28,7 +27,7 @@ However, jobs are not registred, so you should register tasks accroding to the b
     - Split a clickstream file
 4. run_graphical_metrics.sh
     - Run 'graphical_metrics_parallel.py'
-5. merge_graphical_metrics_files.py
+5. graphical_metrics_merge.py
     - Merge splitted output *.csv files 
 6. run_data_preprocess.sh
     - Run data_preprocess.py
@@ -45,18 +44,18 @@ However, jobs are not registred, so you should register tasks accroding to the b
 
 
 # Clickstream
-1. $python check_wikipedia_dataset.py
+1. $python check_download.py
 2. $./run_download_wikipedia.sh clickstream 202001 1
     - download_wikipedia.py 
 3. $python split_clickstream_files.py 202001
 4. $./run_graphical_metrics.sh 202001 3
     - graphical_metrics_parallel.py 
-5. $python merge_graphical_metrics_files.py 
-6. $python clickstream_to_sql.py ../download/clickstream/202001/ clickstream-enwiki-2020-01.tsv.gz  
+5. $python graphical_metrics_merge.py 
+6. $python clickstream_to_csv.py ../download/clickstream/202001/ clickstream-enwiki-2020-01.tsv.gz  
 
 
 # Text
-1. $python check_wikipedia_dataset.py
+1. $python check_download.py
 2. $./run_download_wikipedia.sh text 202001 10
     - download_wikipedia.py
 3. $./run_data_preprocess.sh 202001 2
