@@ -24,6 +24,9 @@ We created a Flask webpage to display some interesting statistics about a certai
 # Project Report
 [final_report.pdf](https://github.com/atwong88/WikiPlugin/files/5462867/final_report.pdf)
 
+# Project Video
+https://www.youtube.com/watch?v=wO0qmZpI590
+
 # WikiPlugin Chrome Extension
 ![image](https://user-images.githubusercontent.com/29899423/97657433-34bd9180-1a40-11eb-8c10-441c631eafc2.png)
 
