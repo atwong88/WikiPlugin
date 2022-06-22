@@ -4,7 +4,7 @@ tqdm==4.42.1
 xmltodict==0.12.0
 pandas==1.0.1
 textstat==0.6.0
-numpy==1.18.1
+numpy==1.22.0
 glob2==0.7
 gensim==3.8.1
 xmltodict==0.12.0
